@@ -1,0 +1,7 @@
+com/webonise/hibernatexml/Update.class
+com/webonise/hibernatexml/Delete.class
+com/webonise/hibernatexml/CreateMultiple.class
+com/webonise/hibernatexml/Retrive.class
+com/webonise/hibernatexml/Student.class
+com/webonise/hibernatexml/Create.class
+com/webonise/hibernatexml/Teacher.class
