@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.webonise.model">
+
+	<class name="User" table="users">
+		<id name="userId" column="user_id" type="int">
+			<generator class="native" />
+		</id>
+		<set name="questions" cascade="all">
+			<key column="user_id" />
+			<one-to-many class="Question" />
+		</set>
+		<set name="answers" cascade="all">
+			<key column="user_id" />
+			<one-to-many class="Answer" />
+		</set>
+		<property name="userName" column="user_name" />
+		<property name="password" column="password" />
+
+	</class>
+
+	<class name="Question" table="questions">
+		<id name="questionId" column="ques_id">
+			<generator class="native" />
+		</id>
+		<set name="answers" cascade="all">
+			<key column="ques_id" />
+			<one-to-many class="Answer" />
+		</set>
+		<property name="question" column="question" />
+	</class>
+
+	<class name="Answer" table="answers">
+		<id name="answerId" column="answer_id">
+			<generator class="native" />
+		</id>
+		<property name="answer" column="answer" />
+		<property name="questionId" column="ques_id" />
+		<property name="userId" column="user_id" />
+	</class>
+
+</hibernate-mapping>
