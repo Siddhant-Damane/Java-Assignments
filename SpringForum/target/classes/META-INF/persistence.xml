@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="forumAppUnit">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.webonise.models.User</class>
+		<class>com.webonise.models.Question</class>
+		<class>com.webonise.models.Answers</class>		
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.generate_statistics" value="true" />
+			<property name="hibernate.cache.use_structured_entries" value="true" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="jdbc.batch_size" value="100" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+		</properties>
+	</persistence-unit>
+</persistence>
