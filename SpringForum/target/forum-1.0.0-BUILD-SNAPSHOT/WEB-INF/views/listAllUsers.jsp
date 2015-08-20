@@ -7,6 +7,9 @@
 <title>List of Users</title>
 </head>
 <body>
+	<div align="right">
+		<a href="/forum">Home</a>
+	</div>
 <table border="1" align="center" style="width:50%">
         <thead>
             <tr>

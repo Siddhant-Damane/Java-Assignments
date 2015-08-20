@@ -32,4 +32,14 @@ public interface ForumService {
 	public HashMap<Question, List<Answers>> getMap();
 
 	public List<Answers> getAsnwerById(long questionId);
+
+	public void addQuestion(Question question);
+
+	public void addAnswer(Answers answer, long questionId);
+
+
+	public List<Question> searchQuestion(Question question);
+
+
+	
 }

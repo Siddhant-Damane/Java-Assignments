@@ -4,24 +4,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>User Details</title>
 </head>
-<body> 
-<table border="1" align="center" style="width:50%">
-        <thead>
-            <tr>
-                <th>User Id</th>
-                <th>User Name</th>
-                <th>Password</th>
-              
-            </tr>
-        </thead>
-        <tbody>
-                <tr>
-                    <td>${user.userId}</td>
-                    <td>${user.userName}</td>
-                    <td>${user.password}</td>                   
-                                
-                </tr>
-        </tbody>
-    </table> 
+<body>
+	<div align="right">
+		<a href="/forum">Home</a>
+	</div>
+	<table border="1" align="center" style="width: 50%">
+		<thead>
+			<tr>
+				<th>User Id</th>
+				<th>User Name</th>
+				<th>Password</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>${user.userId}</td>
+				<td>${user.userName}</td>
+				<td>${user.password}</td>
+
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>

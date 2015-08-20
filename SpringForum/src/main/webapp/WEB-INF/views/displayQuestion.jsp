@@ -4,8 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Question</title>
 </head>
-<body> 
-<table border="1" align="center" style="width:50%">
+<body>
+	<div align="right">
+		<a href="/forum">Home</a>
+	</div>
+	<table border="1" align="center" style="width:50%">
         <thead>
             <tr>
                 <th>Question</th>

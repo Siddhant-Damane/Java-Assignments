@@ -32,13 +32,12 @@ public class ForumServiceImplementation implements ForumService {
 
 		HashMap<Question, List<Answers>> map = new HashMap<Question, List<Answers>>();
 
-		List<Question> questions = questionDao.findAll();
+		List<Question> questionList = questionDao.findAll();
 
-		int totalQuestions = questions.size();
+		for (Question question : questionList) {
+			List<Answers> answers = answerDao.findByQuestionId(question.getQuestionId());
+			map.put(question, answers);
 
-		for (int i = 0; i < totalQuestions; i++) {
-			List<Answers> answers = answerDao.findByQuestionId(questions.get(i).getQuestionId());
-			map.put(questions.get(i), answers);
 		}
 		return map;
 	}
@@ -74,6 +73,7 @@ public class ForumServiceImplementation implements ForumService {
 
 	@Override
 	public Question getQuestionById(long quesId) {
+
 		Question question = questionDao.findByQuestionId(quesId);
 		return question;
 	}
@@ -91,7 +91,6 @@ public class ForumServiceImplementation implements ForumService {
 	public User getUserById(long userId) {
 
 		User user = userDao.findByUserId(userId);
-
 		return user;
 	}
 
@@ -115,4 +114,31 @@ public class ForumServiceImplementation implements ForumService {
 
 	}
 
+	@Override
+	public void addQuestion(Question question) {
+		// TODO Auto-generated method stub
+		if (question.getUserId() == 0) {
+			question.setUserId(1);
+
+		}
+		questionDao.saveAndFlush(question);
+
+	}
+
+	public void addAnswer(Answers answer, long questionId) {
+		if (answer.getUserId() == 0) {
+			answer.setUserId(1);
+
+		}
+		answer.setQuestionId(questionId);
+		answerDao.saveAndFlush(answer);
+	}
+
+	public List<Question> searchQuestion(Question question) {
+
+		List<Question> questions = questionDao.search(question.getQuestion());
+
+		return questions;
+
+	}
 }
